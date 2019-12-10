@@ -11,7 +11,7 @@ export default class Login extends Component{
 
         //temporary
         document.cookie = "adminKey=admin";
-        this.props.history.push("/main");
+        this.props.history.push("/home");
     }
 
     render(){
@@ -47,7 +47,7 @@ export default class Login extends Component{
                         <div className='card-footer'>
                             <div className='row'>
                                 <div className='col-md-12'>
-                                    <input type='submit' className='btn btn-primary'/>
+                                    <button type='submit' className='btn btn-primary'>Submit</button>
                                 </div>
                             </div>
                         </div>

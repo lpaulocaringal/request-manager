@@ -13,7 +13,7 @@ export default class App extends Component{
         return(
             <BrowserRouter>
                 <Switch>
-                    <Route path='/main' render={({ history }) => <Main history={history} />} />
+                    <Route path='/home' render={({ history }) => <Main history={history} />} />
                     <Route path='/login' render={({ history }) => <Login history={history} />} />
                     <Redirect from='/' to='/login'/>
                 </Switch>
