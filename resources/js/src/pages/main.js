@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-import {Route} from 'react-router-dom';
+import {Route, Router} from 'react-router-dom';
 
 import {NavBar, SideBar} from '../components'
 import {Home, Request} from './index';
@@ -19,8 +18,8 @@ export default class Main extends Component{
                 <div className='col'>
                     <div className='main-container'>
                         <div className='main py-4'>
-                            <Route exact path='/request' render={()=><Request/>} />
-                            <Route exact path='/home' render={()=><Home/>} />
+                            <Route exact path='/request' render={() => <Request />} />
+                            <Route exact path='/' render={() => <Home />} />
                         </div>
                     </div>
                 </div>

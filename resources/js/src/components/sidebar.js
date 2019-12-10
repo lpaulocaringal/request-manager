@@ -21,10 +21,6 @@ class SideBar extends Component {
 
     deleteCookie(name) {
         document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
-    };
-
-    redirect(page){
-        this.props.history.push('./' + page);
     }
 
     logout() {
@@ -39,9 +35,9 @@ class SideBar extends Component {
                     isOpen={this.state.menuOpen}
                     closeCallback={this.closeMenu.bind(this)}>
                     <div className='col'>
-                        <ul className='list-group mt-3' onClick={this.closeMenu.bind(this)}>
+                        <ul className='list-group mt-3'>
                             <li className='list-group-item mt-1'><span className='fa fa-fw fa-home'></span> Home</li>
-                            <li className='list-group-item mt-1' onClick={() => this.redirect('request')}><span className='fa fa-fw fa-file'></span> Request</li>
+                            <li className='list-group-item mt-1'><span className='fa fa-fw fa-file'></span> <Link to={'/request'}>Request</Link></li>
                             <li className='list-group-item mt-1'><span className='fa fa-fw fa-home'></span> Home</li>
                         </ul>
                         <ul className='list-group mx-3 mb-3 fixed-bottom'>

@@ -11,7 +11,7 @@ export default class Login extends Component{
 
         //temporary
         document.cookie = "adminKey=admin";
-        this.props.history.push("/home");
+        this.props.history.push("/");
     }
 
     render(){
