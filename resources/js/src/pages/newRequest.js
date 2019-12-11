@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
-class Home extends Component{
+class NewRequest extends Component{
     constructor(props){
         super(props);
     }
 
     render(){
         return(
-            <div>Home</div>
+            <div>NewRequest</div>
         );
     }
 }
 
-export default Home;
+export default NewRequest;

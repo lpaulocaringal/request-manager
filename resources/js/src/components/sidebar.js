@@ -35,10 +35,9 @@ class SideBar extends Component {
                     isOpen={this.state.menuOpen}
                     closeCallback={this.closeMenu.bind(this)}>
                     <div className='col'>
-                        <ul className='list-group mt-3'>
-                            <li className='list-group-item mt-1'><span className='fa fa-fw fa-home'></span> Home</li>
-                            <li className='list-group-item mt-1'><span className='fa fa-fw fa-file'></span> <Link to={'/request'}>Request</Link></li>
-                            <li className='list-group-item mt-1'><span className='fa fa-fw fa-home'></span> Home</li>
+                        <ul className='list-group mt-3' onClick={this.closeMenu.bind(this)}>
+                            <Link to={'/'}><li className='list-group-item mt-1'><span className='fa fa-fw fa-home'></span> Home</li></Link>
+                            <Link to={'/request'}><li className='list-group-item mt-1'><span className='fa fa-fw fa-file'></span> Request</li></Link>
                         </ul>
                         <ul className='list-group mx-3 mb-3 fixed-bottom'>
                             <li className='list-group-item' onClick={() => this.logout()}><span className='fa fa-fw fa-sign-out-alt'></span> Logout</li>

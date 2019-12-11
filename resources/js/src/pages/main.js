@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Route, Router} from 'react-router-dom';
 
 import {NavBar, SideBar} from '../components'
-import {Home, Request} from './index';
+import {Home, Request, NewRequest} from './index';
 
 export default class Main extends Component{
     constructor(props){
@@ -12,16 +12,14 @@ export default class Main extends Component{
     render(){
         return(
             <div>
-                <div className='col mt-3'>
-                    <SideBar history={this.props.history}/>
-                </div>
-                <div className='col'>
-                    <div className='main-container'>
-                        <div className='main py-4'>
-                            <Route exact path='/request' render={() => <Request />} />
-                            <Route exact path='/' render={() => <Home />} />
-                        </div>
-                    </div>
+                <div className='row mt-3'>
+                    {/* <SideBar history={this.props.history}/> */}
+                    <NavBar history={this.props.history}/>/>
+                </div><br/><br/>
+                <div className='container'>
+                    <Route exact path='/new-request' render={() => <NewRequest />} />
+                    <Route exact path='/request' render={() => <Request />} />
+                    <Route exact path='/' render={() => <Home />} />
                 </div>
             </div>
         );

@@ -10,13 +10,14 @@ export default class Login extends Component{
         e.preventDefault();
 
         //temporary
-        document.cookie = "adminKey=admin";
+        // document.cookie = "adminKey=admin";
         this.props.history.push("/");
     }
 
     render(){
         return(
             <form onSubmit={(e) => this.login(e)}>
+                <br/><br/>
                 <div className='container'>
                     <div className='card'>
                         <div className='card-header'>
