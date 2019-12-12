@@ -12,7 +12,7 @@ class NavBar extends Component{
     };
 
     logout() {
-        // this.deleteCookie("adminKey");
+        this.deleteCookie("adminKey");
         this.props.history.push("/login");
     }
 

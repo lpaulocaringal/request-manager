@@ -1,16 +1,24 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 
+import auth from '../components';
+
 export default class Login extends Component{
     constructor(props){
         super(props);
+        this.state = {
+            user: {
+                username: '',
+                password: ''
+            }
+        }
     }
 
     async login(e){
         e.preventDefault();
 
         //temporary
-        // document.cookie = "adminKey=admin";
+        document.cookie = "devKey=admin";
         this.props.history.push("/");
     }
 
@@ -33,7 +41,7 @@ export default class Login extends Component{
                                     <h4>Username</h4>
                                 </div>
                                 <div className='col-md-9'>
-                                    <input type='text'/>
+                                    <input className='form form-control' type='text' value={this.state.user.username} />
                                 </div>
                             </div>
                             <div className='form-group row'>
@@ -41,7 +49,7 @@ export default class Login extends Component{
                                     <h4>Password</h4>
                                 </div>
                                 <div className='col-md-9'>
-                                    <input type='password'/>
+                                    <input className='form form-control' type='password' value={this.state.user.password}/>
                                 </div>
                             </div>
                         </div>
