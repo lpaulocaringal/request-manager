@@ -1,40 +1,28 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import ReactDOM from 'react-dom';
 import ReactTable from 'react-table';
+import {Link} from 'react-router-dom';
 import "react-table/react-table.css";
 
-class Request extends Component{
+class Home extends Component{
     constructor(props){
         super(props);
     }
 
     render(){
-        const data = [{
-            name: 'Roy Agasthyan',
-            age: 26
-        },{
-            name: 'Sam Thomason',
-            age: 22
-        },{
-            name: 'Michael Jackson',
-            age: 36
-        },{
-            name: 'Samuel Roy',
-            age: 56
-        },{
-            name: 'Rima Soy',
-            age: 28
-        },{
-            name: 'Suzi Eliamma',
-            age: 28
-        }]
 
         const columns = [{
-            Header: 'Name',
-            accessor: 'name'
+            Header: 'Request',
+            accessor: 'request'
         },{
-            Header: 'Age',
-            accessor: 'age'
+            Header: 'Date',
+            accessor: 'date'
+        },{
+            Header: 'Resources',
+            accessor: 'resources'
+        },{
+            Header: 'Status',
+            accessor: 'status'
         }]
         return(
             <div className='container'>
@@ -48,10 +36,9 @@ class Request extends Component{
                         <div className='row'>
                             <div className='col-md-12'>
                                 <ReactTable
-                                    data={data}
                                     columns={columns}
-                                    defaultPageSize = {3}
-                                    pageSizeOptions = {[3, 6]}
+                                    defaultPageSize = {10}
+                                    pageSizeOptions = {[10, 15]}
                                 />
                             </div>
                         </div>
@@ -62,4 +49,4 @@ class Request extends Component{
     }
 }
 
-export default Request;
+export default Home;

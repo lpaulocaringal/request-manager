@@ -1,16 +1,2 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat);.main-container {
-  height: 100vh;
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
-}
-
-.main {
-  -webkit-box-flex: 1;
-          flex-grow: 1;
-  overflow-y: scroll;
-  margin-left: 100px !important;
-}
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
 

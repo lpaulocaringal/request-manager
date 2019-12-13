@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Route, Router} from 'react-router-dom';
 
 import {NavBar, SideBar} from '../components'
-import {Home, Request, NewRequest} from './admin/index';
+import {Home, Request, NewRequest} from './analyst';
 
 export default class Main extends Component{
     constructor(props){
@@ -22,11 +22,10 @@ export default class Main extends Component{
                     <div className='row mt-3'>
                         <NavBar history={this.props.history}/>/>
                     </div><br/><br/>
-                    {/* <div className='container'>
+                    <div className='container'>
                         <Route exact path='/new-request' render={() => <NewRequest />} />
-                        <Route exact path='/request' render={() => <Request />} />
                         <Route exact path='/' render={() => <Home />} />
-                    </div> */}<h1>Admin</h1>
+                    </div>
                 </div>
             );
         }
@@ -48,6 +47,7 @@ export default class Main extends Component{
             return(
                 <div>
                     <h1>Error Logging In</h1>
+                    <button onClick={this.props.history.push('/login')}>Go back to Login</button>
                 </div>
             );
         }

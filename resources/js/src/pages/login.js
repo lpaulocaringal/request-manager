@@ -14,17 +14,23 @@ export default class Login extends Component{
         }
     }
 
+    handleChange(e, data) {
+        const user = this.state.user;
+        user[data] = e;
+        this.setState({ user });
+    }
+
     async login(e){
         e.preventDefault();
 
         //temporary
-        document.cookie = "devKey=admin";
+        document.cookie = "adminKey=admin";
         this.props.history.push("/");
     }
 
     render(){
         return(
-            <form onSubmit={(e) => this.login(e)}>
+            <div>
                 <br/><br/>
                 <div className='container'>
                     <div className='card'>
@@ -35,34 +41,36 @@ export default class Login extends Component{
                                 </div>
                             </div>
                         </div>
-                        <div className='card-body'>
-                            <div className='form-group row'>
-                                <div className='col-md-3'>
-                                    <h4>Username</h4>
+                        <form onSubmit={(e) => this.login(e)}>
+                            <div className='card-body'>
+                                <div className='form-group row'>
+                                    <div className='col-md-3'>
+                                        <h4>Username</h4>
+                                    </div>
+                                    <div className='col-md-9'>
+                                        <input className='form form-control' type='text' value={this.state.user.username} onChange={(e) => this.handleChange(e.target.value, "username")} />
+                                    </div>
                                 </div>
-                                <div className='col-md-9'>
-                                    <input className='form form-control' type='text' value={this.state.user.username} />
-                                </div>
-                            </div>
-                            <div className='form-group row'>
-                                <div className='col-md-3'>
-                                    <h4>Password</h4>
-                                </div>
-                                <div className='col-md-9'>
-                                    <input className='form form-control' type='password' value={this.state.user.password}/>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='card-footer'>
-                            <div className='row'>
-                                <div className='col-md-12'>
-                                    <button type='submit' className='btn btn-primary'>Submit</button>
+                                <div className='form-group row'>
+                                    <div className='col-md-3'>
+                                        <h4>Password</h4>
+                                    </div>
+                                    <div className='col-md-9'>
+                                        <input className='form form-control' type='password' value={this.state.user.password} onChange={(e) => this.handleChange(e.target.value, "password")}/>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                            <div className='card-footer'>
+                                <div className='row'>
+                                    <div className='col-md-12'>
+                                        <button type='submit' className='btn btn-primary'>Submit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </form>
+            </div>
         );
     }
 }

@@ -22,7 +22,6 @@ class NavBar extends Component{
             <Navbar.Brand href="#home">Navbar</Navbar.Brand>
             <Nav className="mr-auto">
                 <Nav.Link><NavLink to={'/'} style={{ textDecoration: 'none', color: 'inherit' }}>Home</NavLink></Nav.Link>
-                <Nav.Link><NavLink to={'/request'} style={{ textDecoration: 'none', color: 'inherit' }}>Requests</NavLink></Nav.Link>
             </Nav>
             <Nav>
                 <span onClick={this.logout.bind(this)}><Nav.Link>Sign out</Nav.Link></span>
