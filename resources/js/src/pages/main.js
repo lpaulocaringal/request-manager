@@ -16,7 +16,7 @@ export default class Main extends Component{
     }
 
     render(){
-        if(this.getCookie("adminKey")){
+        if(this.getCookie("accessKey") == "analyst"){
             return(
                 <div>
                     <div className='row mt-3'>
@@ -29,7 +29,7 @@ export default class Main extends Component{
                 </div>
             );
         }
-        else if(this.getCookie("devKey")){
+        else if(this.getCookie("accessKey") == "developer"){
             return(
                 <div>
                     <div className='row mt-3'>

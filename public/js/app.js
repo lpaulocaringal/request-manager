@@ -75152,14 +75152,22 @@ function (_Component) {
       }];
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
-        className: "btn btn-primary",
-        to: "/new-request"
-      }, "New Request"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-header"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mr-auto col-md-6"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Requests")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-6"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "float-md-right"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+        className: "btn btn-primary",
+        to: "/new-request"
+      }, "New Request"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row"
@@ -75169,7 +75177,7 @@ function (_Component) {
         columns: columns,
         defaultPageSize: 10,
         pageSizeOptions: [10, 15]
-      }))))));
+      }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
     }
   }]);
 
@@ -75243,7 +75251,12 @@ function (_Component) {
   function NewRequest(props) {
     _classCallCheck(this, NewRequest);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(NewRequest).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(NewRequest).call(this, props)); // this.state = {
+    //     newRequest: {
+    //         request: [
+    //         ]
+    //     }
+    // }
   }
 
   _createClass(NewRequest, [{
@@ -75260,34 +75273,131 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-3 mt-2"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Request")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-3 mt-2"
+        className: "col-md-3"
+      }, "Request"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         className: "form form-control"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "sample1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "sample2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "sample3"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-3 mt-2"
+        className: "col-md-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         className: "form form-control"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "sample1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "sample2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "sample3"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-3 mt-2"
+        className: "col-md-3"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         className: "form form-control"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "sample1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "sample2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "sample3")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-3 mt-1"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", null, "Specification Name")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "col-md-9 mt-1"
+        className: "col-md-3"
+      }, "Specification Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-9"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        className: "form-control"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-3"
+      }, "FMT Path"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-9"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        className: "form-control"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-3"
+      }, "Cloned From"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-9"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        className: "form-control"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-3"
+      }, "Library/Solution ID"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-9"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        className: "form-control"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-3"
+      }, "Lookup Table(s)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-9"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        className: "form-control"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-3"
+      }, "Release Note(s)"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-9"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        className: "form-control"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-3"
+      }, "Attachments"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-9"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        className: "form-control"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-3"
+      }, "BG Customer Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-9"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        className: "form-control"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-3"
+      }, "BG Project Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-9"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        className: "form-control"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-3"
+      }, "BG Task"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-9"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        className: "form-control"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "form-group row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-3"
+      }, "AI Synopsis"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-9"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         className: "form-control"
       })))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "card-footer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-4"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-4"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-md-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit",
-        className: "btn btn-primary"
-      }, "Submit"))));
+        className: "btn btn-primary form-control"
+      }, "Submit"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
     }
   }]);
 
@@ -75398,7 +75508,7 @@ function (_Component) {
             case 0:
               e.preventDefault(); //temporary
 
-              document.cookie = "adminKey=admin";
+              document.cookie = "accessKey=analyst";
               this.props.history.push("/");
 
             case 3:
@@ -75433,7 +75543,7 @@ function (_Component) {
         className: "form-group row"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-md-3"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Username")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("h4", null, "Email")), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "col-md-9"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("input", {
         className: "form form-control",
@@ -75534,7 +75644,7 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      if (this.getCookie("adminKey")) {
+      if (this.getCookie("accessKey") == "analyst") {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "row mt-3"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["NavBar"], {
@@ -75554,7 +75664,7 @@ function (_Component) {
             return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_analyst__WEBPACK_IMPORTED_MODULE_3__["Home"], null);
           }
         })));
-      } else if (this.getCookie("devKey")) {
+      } else if (this.getCookie("accessKey") == "developer") {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "row mt-3"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components__WEBPACK_IMPORTED_MODULE_2__["NavBar"], {

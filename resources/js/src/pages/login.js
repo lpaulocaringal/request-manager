@@ -24,7 +24,7 @@ export default class Login extends Component{
         e.preventDefault();
 
         //temporary
-        document.cookie = "adminKey=admin";
+        document.cookie = "accessKey=analyst";
         this.props.history.push("/");
     }
 
@@ -45,7 +45,7 @@ export default class Login extends Component{
                             <div className='card-body'>
                                 <div className='form-group row'>
                                     <div className='col-md-3'>
-                                        <h4>Username</h4>
+                                        <h4>Email</h4>
                                     </div>
                                     <div className='col-md-9'>
                                         <input className='form form-control' type='text' value={this.state.user.username} onChange={(e) => this.handleChange(e.target.value, "username")} />

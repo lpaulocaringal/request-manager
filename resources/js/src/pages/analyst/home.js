@@ -26,11 +26,14 @@ class Home extends Component{
         }]
         return(
             <div className='container'>
-                <Link className='btn btn-primary' to='/new-request'>New Request</Link>
-                <br/><br/>
                 <div className='card'>
                     <div className='card-header'>
-                        <h2>Requests</h2>
+                        <div className='row'>
+                            <div className='mr-auto col-md-6'><h2>Requests</h2></div>
+                            <div className='col-md-6'>
+                                <div className='float-md-right'><Link className='btn btn-primary' to='/new-request'>New Request</Link></div>
+                            </div>
+                        </div>
                     </div>
                     <div className='card-body'>
                         <div className='row'>
@@ -43,7 +46,7 @@ class Home extends Component{
                             </div>
                         </div>
                     </div>
-                </div>
+                </div><br/>
             </div>
         );
     }
