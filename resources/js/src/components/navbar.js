@@ -12,7 +12,7 @@ class NavBar extends Component{
     };
 
     logout() {
-        this.deleteCookie("adminKey");
+        this.deleteCookie("accessKey");
         this.props.history.push("/login");
     }
 
@@ -26,10 +26,6 @@ class NavBar extends Component{
             <Nav>
                 <span onClick={this.logout.bind(this)}><Nav.Link>Sign out</Nav.Link></span>
             </Nav>
-            {/* <Form inline>
-                <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                <Button variant="outline-info">Search</Button>
-            </Form> */}
             </Navbar>
         );
     }

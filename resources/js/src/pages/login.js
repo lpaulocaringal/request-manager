@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
-
-import auth from '../components';
+import Axios from 'axios';
+import {REQUEST_MANAGER_API_URL} from '../config';
 
 export default class Login extends Component{
     constructor(props){
         super(props);
         this.state = {
             user: {
-                username: '',
+                email: '',
                 password: ''
-            }
+            },
+            msg: "",
+            style: ""
         }
     }
 
@@ -23,9 +24,26 @@ export default class Login extends Component{
     async login(e){
         e.preventDefault();
 
-        //temporary
-        document.cookie = "accessKey=analyst";
-        this.props.history.push("/");
+        const r = await Axios.post(`${REQUEST_MANAGER_API_URL}/api/user/login`,{
+            'email': this.state.user.email,
+            'password': this.state.user.password
+        }).then(function(r){
+            return r.data;
+        }).catch(function () {
+            return {
+                success: false,
+                data: "The connection to the server failed."
+            }
+        });
+
+        if (r.success) {
+            document.cookie = "accessKey=" + r.data.access_key;
+            this.props.history.push("/");
+        } else {
+            this.setState({ msg: r.data, style: "alert-danger" })
+            this.handleChange("", "email")
+            this.handleChange("", "password")
+        }
     }
 
     render(){
@@ -33,7 +51,7 @@ export default class Login extends Component{
             <div>
                 <br/><br/>
                 <div className='container'>
-                    <div className='card'>
+                    <div className='card w-50'>
                         <div className='card-header'>
                             <div className='row'>
                                 <div className='col-md-12'>
@@ -48,7 +66,7 @@ export default class Login extends Component{
                                         <h4>Email</h4>
                                     </div>
                                     <div className='col-md-9'>
-                                        <input className='form form-control' type='text' value={this.state.user.username} onChange={(e) => this.handleChange(e.target.value, "username")} />
+                                        <input className='form form-control' type='text' value={this.state.user.email} onChange={(e) => this.handleChange(e.target.value, "email")} />
                                     </div>
                                 </div>
                                 <div className='form-group row'>

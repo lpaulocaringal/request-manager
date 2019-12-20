@@ -32,13 +32,7 @@ class UserController extends Controller
                
         $user = new User($payload);
         if ($user->save()){
-            // $token = self::getToken($request->email, $request->password); // generate user token
-            
-            // if (!is_string($token)) 
-            //     return response()->json(['success'=>false,'data'=>'Token generation failed'], 201);
-
             $user = User::where('email', $request->email)->get()->first();
-            // $user->auth_token = $token; // update user token
             $user->save();
             $response = [
                 'success'=>true, 
@@ -62,9 +56,6 @@ class UserController extends Controller
     {
         $user = User::where('email', $request->email)->get()->first();
         if ($user && \Hash::check($request->password, $user->password)){
-        //     // $token = self::getToken($request->email, $request->password);
-        //     // $user->auth_token = $token;
-            // $user = ['success'=>'1'];
             $user->save();
         }else{
             $user = null;
@@ -85,16 +76,13 @@ class UserController extends Controller
                     'last_name'=>$user->last_name,
                     'email'=>$user->email,
                     'email_verified_at'=>$user->email_verified_at,
-                    'auth_token'=>$user->auth_token,
+                    'access_key'=>$user->access_key,
                 ]
             ];           
         }
         else{
             $response = ['success'=>false, 'data'=>'Incorrect email or password.'];
         } 
-        // $response = ['success' => true];    
         return response()->json($response, 201);
-        // return response()->json($request, 201);
-        // return response()->json($user, 201);
     }
 }

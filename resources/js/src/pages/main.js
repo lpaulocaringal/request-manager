@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {Route, Router} from 'react-router-dom';
 
 import {NavBar, SideBar} from '../components'
-import {Home, Request, NewRequest} from './analyst';
+import {AnalystHome, NewRequest} from './analyst';
+import {ManagerHome, ViewRequest} from './manager';
 
 export default class Main extends Component{
     constructor(props){
@@ -24,22 +25,21 @@ export default class Main extends Component{
                     </div><br/><br/>
                     <div className='container'>
                         <Route exact path='/new-request' render={() => <NewRequest />} />
-                        <Route exact path='/' render={() => <Home />} />
+                        <Route exact path='/' render={() => <AnalystHome />} />
                     </div>
                 </div>
             );
         }
-        else if(this.getCookie("accessKey") == "developer"){
+        else if(this.getCookie("accessKey") == "manager"){
             return(
                 <div>
                     <div className='row mt-3'>
                         <NavBar history={this.props.history}/>/>
                     </div><br/><br/>
-                    {/* <div className='container'>
-                        <Route exact path='/new-request' render={() => <NewRequest />} />
-                        <Route exact path='/request' render={() => <Request />} />
-                        <Route exact path='/' render={() => <Home />} />
-                    </div> */}<h1>Dev</h1>
+                    <div className='container'>
+                        <Route exact path='/view-request' render={() => <ViewRequest />} />
+                        <Route exact path='/' render={() => <ManagerHome />} />
+                    </div>
                 </div>
             );
         }

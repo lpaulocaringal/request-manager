@@ -1,4 +1,4 @@
-import Home from './home';
+import AnalystHome from './analystHome';
 import NewRequest from './newRequest';
 
-export {Home, NewRequest};
+export {AnalystHome, NewRequest};

@@ -4,13 +4,12 @@ import ReactTable from 'react-table';
 import {Link} from 'react-router-dom';
 import "react-table/react-table.css";
 
-class Home extends Component{
+class AnalystHome extends Component{
     constructor(props){
         super(props);
     }
 
     render(){
-
         const columns = [{
             Header: 'Request',
             accessor: 'request'
@@ -28,12 +27,14 @@ class Home extends Component{
             <div className='container'>
                 <div className='card'>
                     <div className='card-header'>
+                    <div className='card-header'>
                         <div className='row'>
                             <div className='mr-auto col-md-6'><h2>Requests</h2></div>
                             <div className='col-md-6'>
                                 <div className='float-md-right'><Link className='btn btn-primary' to='/new-request'>New Request</Link></div>
                             </div>
                         </div>
+                    </div>
                     </div>
                     <div className='card-body'>
                         <div className='row'>
@@ -52,4 +53,4 @@ class Home extends Component{
     }
 }
 
-export default Home;
+export default AnalystHome;
