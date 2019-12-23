@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import ReactTable from 'react-table';
-import {Link} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import "react-table/react-table.css";
 
 class ManagerHome extends Component{
@@ -11,6 +11,9 @@ class ManagerHome extends Component{
 
     render(){
         const columns = [{
+            Header: 'ID',
+            accessor: 'request_id'
+        },{
             Header: 'Request',
             accessor: 'request'
         },{
@@ -25,11 +28,13 @@ class ManagerHome extends Component{
         }]
 
         const data = [{
-            'request':'simple',
+            'request_id':'1',
+            'request':'Simple',
             'date':'05-16-1999',
             'resources':'Luis Caringal',
             'status':'Ongoing'
         }]
+
         return(
             <div className='container'>
                 <div className='card'>
@@ -46,6 +51,18 @@ class ManagerHome extends Component{
                                     columns={columns}
                                     defaultPageSize = {10}
                                     pageSizeOptions = {[10, 15]}
+                                    getTrProps={(state, rowInfo) => {
+                                        if (rowInfo && rowInfo.row) {
+                                            return {
+                                                onClick: (e) => {
+                                                    this.props.history.push({pathname:'/view-request',data:rowInfo.original})
+                                                }
+                                            }
+                                        }
+                                        else{
+                                            return {}
+                                        }
+                                    }}
                                 />
                             </div>
                         </div>

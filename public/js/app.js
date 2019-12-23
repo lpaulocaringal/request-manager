@@ -74841,7 +74841,7 @@ function (_Component) {
         fixed: "top"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Navbar"].Brand, {
         href: "#home"
-      }, "Navbar"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"], {
+      }, "Forms 2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"], {
         className: "mr-auto"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Nav"].Link, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["NavLink"], {
         to: '/',
@@ -75750,14 +75750,20 @@ function (_Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
           exact: true,
           path: "/view-request",
-          render: function render() {
-            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_manager__WEBPACK_IMPORTED_MODULE_4__["ViewRequest"], null);
+          render: function render(_ref) {
+            var history = _ref.history;
+            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_manager__WEBPACK_IMPORTED_MODULE_4__["ViewRequest"], {
+              history: history
+            });
           }
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
           exact: true,
           path: "/",
-          render: function render() {
-            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_manager__WEBPACK_IMPORTED_MODULE_4__["ManagerHome"], null);
+          render: function render(_ref2) {
+            var history = _ref2.history;
+            return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_manager__WEBPACK_IMPORTED_MODULE_4__["ManagerHome"], {
+              history: history
+            });
           }
         })));
       } else {
@@ -75851,7 +75857,12 @@ function (_Component) {
   _createClass(ManagerHome, [{
     key: "render",
     value: function render() {
+      var _this = this;
+
       var columns = [{
+        Header: 'ID',
+        accessor: 'request_id'
+      }, {
         Header: 'Request',
         accessor: 'request'
       }, {
@@ -75865,7 +75876,8 @@ function (_Component) {
         accessor: 'status'
       }];
       var data = [{
-        'request': 'simple',
+        'request_id': '1',
+        'request': 'Simple',
         'date': '05-16-1999',
         'resources': 'Luis Caringal',
         'status': 'Ongoing'
@@ -75890,7 +75902,21 @@ function (_Component) {
         data: data,
         columns: columns,
         defaultPageSize: 10,
-        pageSizeOptions: [10, 15]
+        pageSizeOptions: [10, 15],
+        getTrProps: function getTrProps(state, rowInfo) {
+          if (rowInfo && rowInfo.row) {
+            return {
+              onClick: function onClick(e) {
+                _this.props.history.push({
+                  pathname: '/view-request',
+                  data: rowInfo.original
+                });
+              }
+            };
+          } else {
+            return {};
+          }
+        }
       }))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null));
     }
   }]);
@@ -75945,8 +75971,12 @@ function (_Component) {
   }
 
   _createClass(ViewRequest, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {}
+  }, {
     key: "render",
     value: function render() {
+      console.log(this.props.history.location);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

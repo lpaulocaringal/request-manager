@@ -37,8 +37,8 @@ export default class Main extends Component{
                         <NavBar history={this.props.history}/>/>
                     </div><br/><br/>
                     <div className='container'>
-                        <Route exact path='/view-request' render={() => <ViewRequest />} />
-                        <Route exact path='/' render={() => <ManagerHome />} />
+                        <Route exact path='/view-request' render={({history}) => <ViewRequest history={history}/>} />
+                        <Route exact path='/' render={({history}) => <ManagerHome history={history}/>} />
                     </div>
                 </div>
             );

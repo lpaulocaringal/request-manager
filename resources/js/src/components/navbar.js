@@ -19,7 +19,7 @@ class NavBar extends Component{
     render(){
         return(
             <Navbar bg="dark" variant="dark" fixed='top'>
-            <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+            <Navbar.Brand href="#home">Forms 2</Navbar.Brand>
             <Nav className="mr-auto">
                 <Nav.Link><NavLink to={'/'} style={{ textDecoration: 'none', color: 'inherit' }}>Home</NavLink></Nav.Link>
             </Nav>

@@ -5,7 +5,12 @@ class ViewRequest extends Component{
         super(props)
     }
 
+    componentDidMount(){
+        
+    }
+
     render(){
+        console.log(this.props.history.location);
         return(
             <div className='container'>
                 <div className='card'>

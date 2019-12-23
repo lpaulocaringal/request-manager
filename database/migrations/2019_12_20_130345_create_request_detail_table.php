@@ -16,7 +16,6 @@ class CreateRequestDetailTable extends Migration
         Schema::create('request_detail', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('request_id');
-            $table->json('request');
             $table->string('specification_name');
             $table->string('fmt_path');
             $table->string('cloned_from');
